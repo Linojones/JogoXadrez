@@ -2,6 +2,10 @@ package xadrez;
 
 import jogoTabuleiro.Posicao;
 import jogoTabuleiro.Tabuleiro;
+import xadrez.pecas.Bispo;
+import xadrez.pecas.Cavalo;
+import xadrez.pecas.Peao;
+import xadrez.pecas.Rainha;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
 
@@ -26,7 +30,22 @@ public class PartidaXadrez {
 	
 	private void configInicial() {
 		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(0,0));
+		tabuleiro.colocarPeca(new Cavalo(tabuleiro, Cor.BRANCO), new Posicao(0,1));
+		tabuleiro.colocarPeca(new Bispo(tabuleiro, Cor.BRANCO), new Posicao(0,2));
+		tabuleiro.colocarPeca(new Rainha(tabuleiro, Cor.BRANCO), new Posicao(0,3));
 		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(0,4));
+		tabuleiro.colocarPeca(new Bispo(tabuleiro, Cor.BRANCO), new Posicao(0,5));
+		tabuleiro.colocarPeca(new Cavalo(tabuleiro, Cor.BRANCO), new Posicao(0,6));
+		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(0,7));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,0));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,1));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,2));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,3));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,4));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,5));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,6));
+		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,7));
+		
 		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(7,4));
 	}
 
