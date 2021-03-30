@@ -13,7 +13,7 @@ public class Cavalo extends PecaXadrez{
 	
 	@Override
 	public String toString() {
-		return "H";
+		return "C";
 	}
 
 }
