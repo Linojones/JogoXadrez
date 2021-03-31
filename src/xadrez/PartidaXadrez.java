@@ -28,23 +28,28 @@ public class PartidaXadrez {
 		return mat;
 	}
 	
+	// Colocando uma peça usando as coordenadas do xadrez (A1) e nao da matriz (0,0)
+	private void colocarNovaPeca(char coluna, int linha, PecaXadrez peca) {
+		tabuleiro.colocarPeca(peca, new PosicaoXadrez(coluna, linha).toPosicao());
+	}
+	
 	private void configInicial() {
-		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(0,0));
-		tabuleiro.colocarPeca(new Cavalo(tabuleiro, Cor.BRANCO), new Posicao(0,1));
-		tabuleiro.colocarPeca(new Bispo(tabuleiro, Cor.BRANCO), new Posicao(0,2));
-		tabuleiro.colocarPeca(new Rainha(tabuleiro, Cor.BRANCO), new Posicao(0,3));
-		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.BRANCO), new Posicao(0,4));
-		tabuleiro.colocarPeca(new Bispo(tabuleiro, Cor.BRANCO), new Posicao(0,5));
-		tabuleiro.colocarPeca(new Cavalo(tabuleiro, Cor.BRANCO), new Posicao(0,6));
-		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(0,7));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,0));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,1));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,2));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,3));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,4));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,5));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,6));
-		tabuleiro.colocarPeca(new Peao(tabuleiro, Cor.BRANCO), new Posicao(1,7));
+		colocarNovaPeca('a', 8, new Torre(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('b', 8, new Cavalo(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('c', 8, new Bispo(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('d', 8, new Rainha(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('e', 8, new Rei(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('f', 8, new Bispo(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('g', 8, new Cavalo(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('h', 8, new Torre(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('a', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('b', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('c', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('d', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('e', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('f', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('g', 7, new Peao(tabuleiro, Cor.BRANCO));
+		colocarNovaPeca('h', 7, new Peao(tabuleiro, Cor.BRANCO));
 		
 		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(7,4));
 	}
