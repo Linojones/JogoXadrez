@@ -48,6 +48,9 @@ public class PartidaXadrez {
 		if (!tabuleiro.temUmaPeca(posicao)) {
 			throw new ExcecaoXadrez("Não há peça na posição de origem");
 		}
+		if (!tabuleiro.peca(posicao).existeMovimentoPossivel()) {
+			throw new ExcecaoXadrez("Não há movimentos possíveis para a peça escolhida");
+		}
 	}
 	
 	// Colocando uma peça usando as coordenadas do xadrez (A1) e nao da matriz (0,0)

@@ -37,6 +37,8 @@ public class Principal {
 			catch(InputMismatchException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
+				
+			// Os catch's acima, estao tratando os possiveis erros e nao so avisando que eles ocorreram
 			}
 		}
 
