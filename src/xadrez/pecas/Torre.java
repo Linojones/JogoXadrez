@@ -23,7 +23,7 @@ public class Torre extends PecaXadrez {
 		boolean[][] mat = new boolean [getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 		Posicao p = new Posicao (0,0);
 		
-		
+		// Definindo os movementos possives da peça.
 		
 		// Acima
 		p.definirValores(posicao.getLinha() - 1, posicao.getColuna());
