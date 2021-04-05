@@ -91,7 +91,7 @@ public class PartidaXadrez {
 		
 		// forma antiga de add pecas ao tabuleiro
 		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(7,3));
-		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(7,4));
+		tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(7,4));
 		tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.PRETO), new Posicao(7,5));
 	}
 
