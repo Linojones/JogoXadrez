@@ -16,4 +16,10 @@ public class Peao extends PecaXadrez {
 		return "P";
 	}
 
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

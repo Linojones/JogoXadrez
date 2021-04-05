@@ -16,4 +16,10 @@ public class Cavalo extends PecaXadrez{
 		return "C";
 	}
 
+	@Override
+	public boolean[][] movimentosPossiveis() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
