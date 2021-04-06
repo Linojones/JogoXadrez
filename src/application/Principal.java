@@ -18,7 +18,7 @@ public class Principal {
 		PartidaXadrez partidaXadrez = new PartidaXadrez();
 		List<PecaXadrez> capturada = new ArrayList<>();
 		
-		while (true) {
+		while (!partidaXadrez.getCheckMate()) {
 			
 			try {
 				UI.limpaTela();
@@ -51,6 +51,8 @@ public class Principal {
 			// Os catch's acima, estao tratando os possiveis erros e nao so avisando que eles ocorreram
 			}
 		}
+		UI.limpaTela();
+		UI.imprimePartida(partidaXadrez, capturada);
 
 	}
 
