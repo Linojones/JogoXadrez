@@ -41,8 +41,12 @@ public class Principal {
 				}
 				
 				if (partidaXadrez.getPromocao() != null) {
-					System.out.println("Digite a peça Promovida (B/C/Q/T): ");
-					String tipo = sc.nextLine();
+					System.out.print("Digite a peça Promovida (B/C/Q/T): ");
+					String tipo = sc.nextLine().toUpperCase();
+					while (!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("Q") && !tipo.equals("T")) {
+						System.out.println("Valor invalido! Digite a peça Promovida (B/C/Q/T): ");
+						tipo = sc.nextLine().toUpperCase();
+					}
 					partidaXadrez.substituirPecaPromovida(tipo);
 				}
 			}

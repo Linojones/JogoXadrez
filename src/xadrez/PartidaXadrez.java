@@ -1,6 +1,5 @@
 package xadrez;
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -94,7 +93,6 @@ public class PartidaXadrez {
 		if (pecaMovida instanceof Peao) {
 			if ((pecaMovida.getCor() == Cor.BRANCO && destino.getLinha() == 0) || pecaMovida.getCor() == Cor.PRETO && destino.getLinha() == 7) {
 				promocao = (PecaXadrez)tabuleiro.peca(destino);
-				promocao = substituirPecaPromovida("Q");
 			}
 		}
 		
@@ -118,12 +116,13 @@ public class PartidaXadrez {
 		return (PecaXadrez)pecaCapturada;
 	}
 	
+	// Metodo para Promocao do peao
 	public PecaXadrez substituirPecaPromovida(String tipo) {
 		if (promocao == null) {
 			throw new IllegalStateException("Não ha peça para ser promovida");
 		}
 		if (!tipo.equals("B") && !tipo.equals("C") && !tipo.equals("Q") && !tipo.equals("T")) {
-			throw new InvalidParameterException("Tipo invalido para promoçao");
+			return promocao;
 		}
 		Posicao pos = promocao.getPosicaoXadrez().toPosicao();
 		Peca p = tabuleiro.removePeca(pos);
@@ -132,9 +131,13 @@ public class PartidaXadrez {
 		PecaXadrez novaPeca = novaPeca(tipo, promocao.getCor());
 		tabuleiro.colocarPeca(novaPeca, pos);
 		pecasNoTabuleiro.add(novaPeca);
+		
+		check = testeCheck(jogadorAtual) ? true : false;
+		checkMate = testeCheckMate(jogadorAtual) ? true : false;
+		
 		return novaPeca;
 	}
-	
+	// Metodo auxiliar para promocao do peao
 	private PecaXadrez novaPeca(String tipo, Cor cor) {
 		if (tipo.equals("B")) return new Bispo(tabuleiro, cor);
 		if (tipo.equals("C")) return new Cavalo(tabuleiro, cor);
